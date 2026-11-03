@@ -1,0 +1,301 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+header{
+    position: fixed;
+    top:0;
+    left: 0;
+    width: 100%;
+    padding: 1px 65px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+    background-color: rgb(36, 36, 36);
+    
+}
+main{
+    margin-top: 45px;
+}
+.logo{
+    color: gray;
+    cursor: default;
+    font-size: 3em;
+}
+.logo span{
+    color: black;
+}
+.navigation a{
+    font-size: 1.3em;
+    color: gray;
+    text-decoration: none;
+    margin-right: 40px;
+    font-weight: 500;
+    transition: .4s;
+}
+.navigation a:hover{
+    background-color: white;
+    border-radius: 15px;
+    border: 2px solid;
+    color: black;
+    padding: 10px 25px;
+}
+.btn-talk{
+    font-size: 1.3em;
+    color: aliceblue;
+    text-decoration: none;
+    background-color: black;
+    padding: 5px 35px;
+    border-radius: 10px;
+    border: 2px solid;
+    font-weight: 500;
+    transition: .3s;
+}
+.btn-talk:hover{
+    color: black;
+    background-color: white;
+}
+.home{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 30px 100px;
+}
+.image-container{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 50%;
+    height: 100%;
+}
+.img1{
+    width: 80%;
+    height: auto;
+    margin-top: 80px;
+    margin-left: 140px;
+}
+.content{    
+    max-width: 600px;
+    color: black;
+}
+.content h2{
+    font-size: 3em;
+    font-weight: 1500;
+}
+.content h4{
+    font-size: 1.5em;
+}
+.content p{
+    padding: 10px 0px 40px 0px;
+}
+.btn-group{
+    text-decoration: none;
+    color: white;
+    background-color: black;
+    border-radius: 10px;
+    border: 2px solid;
+    padding: 12px 35px;
+    transition: .3s;
+}
+.btn-group:nth-child(2){
+    color: black;
+    background-color: white;
+}
+.container{
+    margin-top: 45px;
+}
+.icons{    
+    justify-items: center;
+    align-items: center;
+}
+/* From Uiverse.io by ahmed150up */ 
+.m-skills-card {
+    width: 300px;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.header {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    font-size: 18px;
+}
+
+.body {
+    padding: 20px;
+}
+
+.skill {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.skill-name {
+    width: 120px;
+    font-size: 16px;
+}
+
+.skill-level {
+    width: 160px;
+    height: 10px;
+    background-color: #eee;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-left: 20px;
+}
+
+.skill-percent {
+    background-color: #333;
+    height: 100%;
+}
+
+.skill-percent-number {
+    margin-left: 20px;
+    font-size: 16px;
+}
+.form {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+    background-image: linear-gradient(45deg, #202020, 
+    #62615f);
+    border-radius: 2.5em;
+    padding: 27px;
+    width: 70%;
+    height: 350px;
+}
+
+.form::before {
+    content: '';
+    background-image: linear-gradient(45deg, #1b1919, 
+    #3d3d3c);
+    height: 364px;
+    width: 71%;
+    position: absolute;
+    margin-top: -34px;
+    margin-left: px;
+    z-index: -1;
+    border-radius: 2.7em;
+}
+
+.button {
+    margin-top: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 17px;
+    background: #807f7e;
+    color: black;
+    padding: 0.7em 5.5em;
+    display: flex;
+    align-items: center;
+    border: 2px solid #66da4300;
+    border-radius: 5em;
+    overflow: hidden;
+    transition: all 0.2s;
+    cursor: pointer;
+}
+
+.button:hover {
+    border: 2px solid #ff5900;
+    background: #00000000;
+    color: #ff5900;
+}
+
+.button:active {
+    border: 2px solid #66da4300;
+    background: #ff5900;
+    color: black;
+}
+
+.input {
+    width: calc(100% - 10px);
+    font-size: 16px;
+    padding: 8px;
+    margin-bottom: 20px;
+    border: 1px solid #66da4300;
+    border-bottom: 1px solid #ff5900;
+    outline: none;
+    background-color: transparent;
+    color: #ffffff;
+    font-family: Arial, Helvetica, sans-serif;
+    transition: 0.2s;
+}
+
+.input:focus {
+    border: 1px solid #66da4300;
+    border-bottom: 1px solid #ff5900;
+    background-color: transparent;
+    color: white;
+}
+
+.input::placeholder {
+    color: #9b725b;
+}
+
+.textarea {
+    font-family: Arial, Helvetica, sans-serif;
+    width: calc(100% - 10px);
+    padding: 8px;
+    font-size: 16px;
+    height: 100px;
+    margin-bottom: 20px;
+    border: 1px solid #66da4300;
+    border-bottom: 1px solid #ff5900;
+    outline: none;
+    background-color: transparent;
+    color: #e3dfdd;
+}
+
+.textarea::placeholder {
+    color: #9b725b;
+}
+
+.textarea:focus {
+    border: 1px solid #66da4300;
+    border-bottom: 1px solid #ff5900;
+    background-color: transparent;
+    color: white;
+}
+.checkout-btn{
+    text-decoration: none;
+    font-style: normal;
+}
+.btn-checkOut{
+    background-color: #807f7e;
+    color: #191919;
+    transition: .3s;
+    padding: 5px 5px 5px 5px;
+    width: 40%;
+    text-align: center;
+    border-radius: 8px;
+}
+.btn-checkOut:hover{
+    color: #e1dedc;
+    background-color: #191919;
+    transition: .3s;
+}
+.btn-checkOut-link{
+    background-color: #2c76f5;
+    color: #201c1c;
+    transition: .3s;
+    padding: 5px 5px 5px 5px;
+    width: 40%;
+    text-align: center;
+    border-radius: 8px;
+}
+.btn-checkOut-link:hover{
+    color: #f4f5f6;
+    background-color: #201c1c;
+    transition: .3s;
+}
