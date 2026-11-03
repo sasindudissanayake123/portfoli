@@ -1,114 +1,93 @@
-const requestOptions = {
-    method: "GET",
-    redirect: "follow"
-};
+let menuBtn = document.getElementById("menuBtn");
+let navLinks = document.getElementById("navLinks");
 
-fetch("https://api.github.com/users/nethsarasahan61/repos?sort=updated&per_page=100", requestOptions)
-    .then((response) => response.json())
-    .then((result) => {
-        function checkOutWebsite(card){
-            if(card=="card-01"){
-                console.log("1");                
-            }else if(card=="card-02"){
-                console.log("2");                
-            }else if(card=="card-03"){
-                console.log("3");                
-            }else if(card=="card-04"){
-                console.log("4");                
-            }
+menuBtn.addEventListener("click", function () {
+    navLinks.classList.toggle("show");
+});
+
+// CLOSE MENU AFTER CLICKING A LINK
+
+let links = document.querySelectorAll(".nav-links a");
+
+links.forEach(function (link) {
+    link.addEventListener("click", function () {
+        navLinks.classList.remove("show");
+    });
+});
+
+// SCROLL ANIMATION
+
+let revealElements = document.querySelectorAll(".reveal");
+
+let observer = new IntersectionObserver(function (entries) {
+
+    entries.forEach(function (entry) {
+
+        if (entry.isIntersecting) {
+            entry.target.classList.add("active");
         }
-        console.log(result);
-        
-        document.getElementById("card-01").innerHTML=`        
-            <div class="card shadow-sm rounded-5">
-                <img src="assessts/imgs/Lawfirm.png" alt="Card Image" class="card-img-top rounded-top-5" height="250" style="object-fit: cover; width: 100%"/>
-                    <div class="card-body">
-                        <h5 class="card-title">${result[1].name}</h5>
-                        <p class="card-text">
-                            ${result[1].description}
-                        </p>
-                        <div style="display: flex; align-items: center; justify-content: space-evenly;">
-                            <a href="${result[1].html_url}" target="_blank" class="btn-checkOut-link" style="text-decoration: none;">GitHuB Link</a>
-                            <a href="https://nethsarasahan61.github.io/${result[1].name}/" target="_blank" class="btn-checkOut" style="text-decoration: none;">CheckOut</a>
-                        </div>
-                    </div>
-                </div>
-        `
-        document.getElementById("card-02").innerHTML=`
-            <div class="card shadow-sm rounded-5">
-                <img src="assessts/imgs/weatherApp.png" alt="Card Image" class="card-img-top rounded-top-5" height="250" style="object-fit: cover; width: 100%"/>
-                    <div class="card-body">
-                        <h5 class="card-title">${result[2].name}</h5>
-                        <p class="card-text">
-                            ${result[2].description}
-                        </p>
-                        <div style="display: flex; align-items: center; justify-content: space-evenly;">
-                            <a href="${result[2].html_url}" target="_blank" class="btn-checkOut-link" style="text-decoration: none;">GitHuB Link</a>
-                            <a href="https://nethsarasahan61.github.io/${result[2].name}/" target="_blank" class="btn-checkOut" style="text-decoration: none;">CheckOut</a>
-                        </div>
-                    </div>
-                </div>
-        `
-        document.getElementById("card-03").innerHTML=`
-            <div class="card shadow-sm rounded-5">
-                <img src="assessts/imgs/chatBot.png" alt="Card Image" class="card-img-top rounded-top-5" height="250" style="object-fit: cover; width: 100%"/>
-                    <div class="card-body">
-                        <h5 class="card-title">${result[3].name}</h5>
-                        <p class="card-text">
-                            ${result[3].description}
-                        </p>
-                        <div style="display: flex; align-items: center; justify-content: space-evenly;">
-                            <a href="${result[3].html_url}" target="_blank" class="btn-checkOut-link" style="text-decoration: none;">GitHuB Link</a>
-                            <a href="https://nethsarasahan61.github.io/${result[3].name}/" target="_blank" class="btn-checkOut" style="text-decoration: none;">CheckOut</a>
-                        </div>
-                    </div>
-                </div>
-        `
-        document.getElementById("card-04").innerHTML=`
-            <div class="card shadow-sm rounded-5">
-                <img src="assessts/imgs/taxCalc.png" alt="Card Image" class="card-img-top rounded-top-5" height="250" style="object-fit: cover; width: 100%"/>
-                    <div class="card-body">
-                        <h5 class="card-title">${result[18].name}</h5>
-                        <p class="card-text">
-                            ${result[18].description}
-                        </p>
-                        <div style="display: flex; align-items: center; justify-content: space-evenly;">
-                            <a href="${result[18].html_url}" target="_blank" class="btn-checkOut-link" style="text-decoration: none;">GitHuB Link</a>
-                            <a href="https://nethsarasahan61.github.io/${result[18].name}/" target="_blank" class="btn-checkOut" style="text-decoration: none;">CheckOut</a>
-                        </div>
-                    </div>
-                </div>
-        `
-    })
-    .catch((error) => console.error(error));
 
-function btnSendOnAction(){
-    const name=document.getElementById("user-name").value
-    const email=document.getElementById("user-email").value
-    const msg=document.getElementById("msg-area").value
-    if(name===""){
-        return;
-    }else if(email===""){
-        return;
-    }else if(msg===""){
-        return;
-    }
-    
-    Swal.fire({
-    title: "Message Successfully Sent!",
-    icon: "success",
-    showClass: { popup: `
-        animate__animated
-        animate__fadeInUp
-        animate__faster
-    ` },
-    hideClass: { popup: `
-        animate__animated
-        animate__fadeOutDown
-        animate__faster
-    ` }
-    });        
-    document.getElementById("user-name").value=""
-    document.getElementById("user-email").value=""
-    document.getElementById("msg-area").value=""
-}
+    });
+
+}, {
+    threshold: 0.15
+});
+
+revealElements.forEach(function (element) {
+    observer.observe(element);
+});
+
+// SKILLS ANIMATION
+
+let skillsSection = document.querySelector(".skills-card");
+
+let skillObserver = new IntersectionObserver(function (entries) {
+
+    entries.forEach(function (entry) {
+
+        if (entry.isIntersecting) {
+
+            let skillBars = document.querySelectorAll(".skill-progress");
+
+            skillBars.forEach(function (bar) {
+                bar.style.width = bar.getAttribute("data-width");
+            });
+
+            skillObserver.unobserve(entry.target);
+        }
+
+    });
+
+}, {
+    threshold: 0.3
+});
+
+skillObserver.observe(skillsSection);
+
+// CONTACT FORM
+
+let contactForm = document.getElementById("contactForm");
+
+contactForm.addEventListener("submit", function (event) {
+
+    event.preventDefault();
+
+    let name = document.getElementById("name").value;
+    let email = document.getElementById("email").value;
+    let message = document.getElementById("message").value;
+
+    let subject = "Portfolio Contact Message";
+
+    let body =
+        "Name: " + name + "\n" +
+        "Email: " + email + "\n\n" +
+        "Message: " + message;
+
+    let mailLink =
+        "mailto:sasindu.manethra@gmail.com" +
+        "?subject=" + encodeURIComponent(subject) +
+        "&body=" + encodeURIComponent(body);
+
+    window.location.href = mailLink;
+
+});
